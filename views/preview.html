@@ -1,0 +1,14 @@
+<div ng-if="!doc">
+	Loading the docs, please stand by
+</div>
+
+<div ng-if="doc">
+	<p>
+		Preview document from: {{doc.ownerEmail}}
+		<br>
+		<span>Sharable link: </span><input class="form-control" ng-value="currentUrl">
+	</p>
+
+	<!-- Not the best styling option but proto wise will do. -->
+	<embed embed-src="{{doc.url}}" width="100%" height="600px" type='application/pdf'>
+</div>

@@ -1,0 +1,19 @@
+<h3>
+	Your shared documents
+</h3>
+<div ng-if="noDocs()">
+	<h4>No documents shared yet</h4>
+	<a href="#upload" class="btn btn-primary">To the upload page!</a>
+</div>
+<div class="list-group">
+	<div ng-repeat="(url, quotas) in documentUsageQuotas">
+		<div class="list-group-item">
+			<a ng-href="{{url}}" target="_blank">Document</a>
+		</div>
+		<div ng-repeat="quota in quotas" class="list-group-item">
+			Client: {{quota.userEmail}}
+			<div>Preview duration: {{quota.quota | secondsToDateTime | date:'HH:mm:ss'}}</div>
+		</div>
+		<br>
+	</div>
+</div>
